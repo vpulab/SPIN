@@ -1,0 +1,97 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/TabbedMenu/TabbedMenu.uss?fileID=7433441132597879392&amp;guid=f859d661b3bbed3468a406a25ee1934b&amp;type=3#TabbedMenu" />
+    <ui:VisualElement name="tabs" style="height: 40px; width: 460px; opacity: 1; justify-content: space-around; align-items: center; margin-left: 10px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); margin-right: 0; margin-top: 10px; margin-bottom: 0;">
+        <ui:Label text="Environment" display-tooltip-when-elided="true" name="IlluminationTab" class="tab" style="align-items: auto; -unity-text-align: upper-center;" />
+        <ui:Label text="Camera" display-tooltip-when-elided="true" name="CameraTab" class="tab" style="height: auto; width: auto; justify-content: flex-start; align-items: auto; display: flex; -unity-text-align: upper-center;" />
+        <ui:Label text="Model" display-tooltip-when-elided="true" name="ModelSettingsTab" class="tab" style="height: auto; width: auto; justify-content: flex-start; align-items: auto; -unity-text-align: upper-center;" />
+        <ui:Label text="Pose" display-tooltip-when-elided="true" name="PoseControlTab" class="tab" style="display: flex; -unity-text-align: upper-center;" />
+        <ui:Label text="Generation" display-tooltip-when-elided="true" name="GenerationTab" tooltip="Generation settings (where to generate)" class="tab" style="margin-right: 0; margin-left: 2px;" />
+        <ui:Label text="Presets" display-tooltip-when-elided="true" name="PresetsTab" class="tab" style="margin-right: 5px; margin-left: 0;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="tabContent" style="height: 752px; width: 460px; display: flex; opacity: 1; margin-left: 10px; background-color: rgba(255, 255, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="IlluminationContent" class="unselectedContent tabContentPage" style="display: none; flex-direction: column; align-items: flex-start; justify-content: space-between; width: auto;">
+            <ui:Label text="Light Settings" display-tooltip-when-elided="true" name="light-settings" style="border-bottom-width: 1px; border-bottom-color: rgb(111, 107, 107); flex-grow: 1; width: 100%;" />
+            <ui:Toggle label="Shadows" value="false" name="enable-shadows" class="tabContentPage" style="flex-direction: row; flex-basis: auto; flex-grow: 1; flex-wrap: nowrap; flex-shrink: 0; align-items: center; width: auto; border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0;" />
+            <ui:Toggle label="Directional Light" name="enable-sun" />
+            <ui:Slider picking-mode="Ignore" label="D. Light Intensity" value="3500" high-value="130000" name="sun-intensity" class="tabContentPage" style="flex-grow: 1; border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0;" />
+            <ui:Toggle label="Ambient Light" name="enable-ambient-light" />
+            <ui:Slider picking-mode="Ignore" label="Ambient Light Intensity" value="42" high-value="65000" name="ambient-light-intensity" class="tabContentPage" style="flex-grow: 1; border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0;" />
+            <ui:Toggle label="Ambient Occlusion" name="ambient-occlusion" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CameraContent" class="tabContentPage" style="display: none; margin-bottom: 0;">
+            <ui:Label text="Camera &amp; Sensor Settings" display-tooltip-when-elided="true" name="camera-settings-label" style="font-size: 14px; -unity-font-style: bold;" />
+            <ui:TextField picking-mode="Ignore" label="Focal Length" value="filler text" name="camera-focal-length" style="margin-bottom: 2px;" />
+            <ui:TextField picking-mode="Ignore" label="Focal Distance" name="camera-focal-distance" />
+            <ui:TextField picking-mode="Ignore" label="Aperture" name="camera-aperture" />
+            <ui:TextField picking-mode="Ignore" label="Sensor Size X" name="camera-sensor-size-x" />
+            <ui:TextField picking-mode="Ignore" label="Sensor Size Y" name="camera-sensor-size-y" />
+            <ui:Toggle label="Link with satellite" name="link-focal-distance" style="margin-top: 2px; display: none;" />
+            <ui:Label text="Post-Processing" display-tooltip-when-elided="true" name="post-processing-label" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); border-top-width: 2px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-top-color: rgb(0, 0, 0); -unity-font-style: bold; font-size: 14px; margin-bottom: 2px; margin-top: 3%;" />
+            <ui:Toggle label="Color Adjustments" name="color-adjustments" />
+            <ui:Toggle label="Film Grain" name="enable-film-grain" />
+            <ui:Slider picking-mode="Ignore" label="Film Grain Intensity" value="0.5" high-value="1" name="film-grain-intensity" />
+            <ui:Toggle label="Bloom" name="enable-bloom" style="margin-bottom: 5%;" />
+            <ui:Slider picking-mode="Ignore" label="Bloom Intensity" high-value="1" name="bloom-intensity" />
+            <ui:Slider picking-mode="Ignore" label="Bloom Scatter" high-value="1" name="bloom-scatter" />
+            <ui:Slider picking-mode="Ignore" label="Bloom Threshold" high-value="10" name="bloom-threshold" style="margin-bottom: 4px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="ModelSettingsContent" class="tabContentPage" style="display: none; -unity-background-image-tint-color: rgb(192, 192, 192);">
+            <ui:Label text="Model Settings" display-tooltip-when-elided="true" name="model-settings" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); -unity-font-style: bold; font-size: 14px; margin-top: 2px; border-top-width: 0; border-top-color: rgb(0, 0, 0); margin-bottom: 2px;" />
+            <ui:Toggle label="Disable HQ Materials" name="alternate-materials" />
+            <ui:Toggle label="Specularity" name="enable-specular" />
+            <ui:Toggle label="Display Keypoints" name="display-keypoints" style="margin-bottom: 5%;" />
+            <ui:Foldout text="Custom Keypoints" name="custom-keypoints" style="display: none;">
+                <ui:TextField picking-mode="Ignore" label="Keypoints File Path" name="keypoints-file" />
+                <ui:Button text="Load Keypoints" display-tooltip-when-elided="true" name="load-keypoints" />
+            </ui:Foldout>
+            <ui:Label display-tooltip-when-elided="true" name="model-settings" style="border-bottom-width: 1px; border-bottom-color: rgb(111, 107, 107);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="PoseControlContent" class="tabContentPage" style="display: none; flex-shrink: 0;">
+            <ui:Label text="Pose Control" display-tooltip-when-elided="true" name="pose-control-label" style="font-size: 14px; -unity-font-style: bold; margin-bottom: 2px;" />
+            <ui:Label text="Load Preset Poses" display-tooltip-when-elided="true" name="load-preset-poses" style="margin-bottom: 2px;" />
+            <ui:Button text="Load Poses from SPEED+ Synthetic - Train" display-tooltip-when-elided="true" name="load-spdpp-syn-t" enable-rich-text="true" style="margin-bottom: 2px;" />
+            <ui:Button text="Load Poses from SPEED+ Synthetic - Validation" display-tooltip-when-elided="true" name="load-spdpp-syn-v" style="display: flex;" />
+            <ui:TextField picking-mode="Ignore" label="Load Custom Poses File" name="load-poses-path" readonly="false" is-delayed="false" tooltip="Path to poses file." style="display: flex; height: auto; width: auto; align-items: auto; justify-content: flex-start; margin-right: 3px; margin-left: 3%; flex-wrap: nowrap; -unity-slice-left: 0; margin-top: 3px; margin-bottom: 3px;" />
+            <ui:Button text="Load Poses" display-tooltip-when-elided="true" name="load-poses" style="margin-top: 5px; margin-bottom: 5px; margin-left: 3px;" />
+            <ui:Button text="Load SPEED++ Sunlamp" display-tooltip-when-elided="true" name="load-spdpp-sl" style="display: none;" />
+            <ui:Button text="Load SPEED++ Lightbox" display-tooltip-when-elided="true" name="load-spdpp-lb" style="display: none;" />
+            <ui:Label text="Utilities" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 14px; border-top-width: 2px; border-top-color: rgb(0, 0, 0);" />
+            <ui:TextField picking-mode="Ignore" label="Go to Image" name="go-to-image-name" tooltip="Input the name of the image you want to load the poses from." usage-hints="DynamicTransform" style="height: auto; align-items: center; margin-top: 5px; max-height: 40%; border-top-width: 0; border-top-color: rgb(0, 0, 0); margin-right: 0; margin-left: 0;" />
+            <ui:Button text="Load Pose" display-tooltip-when-elided="true" name="go-to-image" />
+            <ui:Label text="Configuration" display-tooltip-when-elided="true" name="model-settings" style="border-bottom-width: 1px; border-bottom-color: rgb(111, 107, 107); display: none;" />
+        </ui:VisualElement>
+        <ui:GroupBox name="GenerationContent" class="tabContentPage" style="background-color: rgb(255, 255, 255); display: none; margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;">
+            <ui:Label text="Generation Settings" display-tooltip-when-elided="true" name="generation-settings-label" style="font-size: 14px; -unity-font-style: bold; border-top-width: 0; border-top-color: rgb(0, 0, 0); margin-top: 0;" />
+            <ui:TextField picking-mode="Ignore" label="Gerneration Output Path" name="dataset-path" readonly="false" style="height: 40px; align-items: center; color: rgb(0, 0, 0);" />
+            <ui:Label text="Dataset Generation Settings" display-tooltip-when-elided="true" name="dataset-generation-label" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); margin-top: 1%; font-size: 14px; -unity-font-style: bold; border-top-width: 2px; border-top-color: rgb(0, 0, 0);" />
+            <ui:Toggle label="Randomize Sun" name="randomize-sun" style="margin-top: 3px;" />
+            <ui:Toggle label="Prevent Sun Occlusion" name="prevent-sun-occlusion" style="display: none;" />
+            <ui:Label text="Background Settings" display-tooltip-when-elided="true" name="background-settings" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); font-size: 14px; -unity-font-style: bold; border-top-width: 2px; border-top-color: rgb(0, 0, 0);" />
+            <ui:Toggle label="Enable Background" name="enable-background" />
+            <ui:Toggle label="Fix Background Image" name="fix-background-image" />
+            <ui:Toggle label="Fix Background Pose" name="fix-background-pose" style="justify-content: flex-start; align-items: stretch; flex-direction: row;" />
+            <ui:TextField picking-mode="Ignore" label="Enable Background at Image" value="None" text="None" name="enable-background-at" tooltip="Useful if you want to replicate SPEED+ whose background starts at image 0030000.png" style="height: auto;" />
+            <ui:SliderInt picking-mode="Ignore" label="Background Rate" value="0" high-value="100" name="background-rate" style="display: flex;" />
+            <ui:VisualElement name="generation-function-buttons" style="flex-direction: row;" />
+            <ui:Label text="Generate alternate Background or Sun" display-tooltip-when-elided="true" name="background-settings" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); font-size: 14px; -unity-font-style: bold; border-top-width: 2px; border-top-color: rgb(0, 0, 0);" />
+            <ui:Button text="New Sun" display-tooltip-when-elided="true" name="new-sun" style="width: auto; margin-right: 3px; height: auto; margin-bottom: 2px; margin-top: 0; margin-left: 1px;" />
+            <ui:Button text="New Background" display-tooltip-when-elided="true" name="new-background" style="width: auto; align-items: auto; margin-left: 1px; margin-right: 3px; height: auto;" />
+            <ui:Label text="Additional Settings" display-tooltip-when-elided="true" name="additional-data-label" style="border-bottom-width: 0; border-bottom-color: rgb(111, 107, 107); font-size: 14px; -unity-font-style: bold; border-top-width: 2px; border-top-color: rgb(0, 0, 0);" />
+            <ui:Toggle label="Capture Depth" name="toggle-depth-capture" />
+            <ui:TextField picking-mode="Ignore" label="Depth Files Path" value="None" text="None" name="depth-files-location" tooltip="Useful if you want to replicate SPEED+ whose background starts at image 0030000.png" readonly="true" style="height: auto;" />
+        </ui:GroupBox>
+        <ui:GroupBox name="PresetsContent" class="tabContentPage" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; background-color: rgb(255, 255, 255); border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; font-size: 12px; border-left-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); display: none;">
+            <ui:Label text="Default Presets" display-tooltip-when-elided="true" name="pose-control-label" style="font-size: 14px; -unity-font-style: bold; margin-bottom: 2px; border-top-width: 0; border-top-color: rgb(0, 0, 0);" />
+            <ui:Button text="SPEED+ Synthetic" display-tooltip-when-elided="true" name="speedpp-syn" style="align-items: center; max-width: 100%;" />
+            <ui:Button text="SPEED+ Enhanced" display-tooltip-when-elided="true" name="speedpp-lb" />
+            <ui:Button text="SPEED++ Sunlamp" display-tooltip-when-elided="true" name="speedpp-sl" style="display: none;" />
+            <ui:Foldout text="Configuration Presets" name="presets" value="true" style="align-items: flex-start; justify-content: flex-start; flex-direction: column; flex-wrap: wrap; margin-bottom: 0; margin-top: 2px; flex-shrink: 0; max-width: 100%; max-height: 40%; display: none;" />
+            <ui:TextField picking-mode="Ignore" label="Custom preset path" name="preset-file-path" value="custom" style="display: none;" />
+            <ui:Label text="Custom Preset" display-tooltip-when-elided="true" name="pose-control-label" style="font-size: 14px; -unity-font-style: bold; margin-bottom: 2px; margin-top: 4px;" />
+            <ui:VisualElement name="Load-save-buttons" style="flex-direction: row; display: flex; flex-shrink: 0; flex-wrap: nowrap;">
+                <ui:Button text="Load Preset" display-tooltip-when-elided="true" name="load-preset" style="width: 49%; margin-right: 1px; height: 30px; display: flex; margin-bottom: 4px;" />
+                <ui:Button text="Save Preset" display-tooltip-when-elided="true" name="save-preset" style="width: 49%; align-items: auto; margin-left: 1px; margin-right: 3px; height: 30px; display: flex;" />
+            </ui:VisualElement>
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,6 @@
+{
+  "UnityEngine.Perception.GroundTruth.Consumers.SoloEndpoint.output_path": {
+    "type": "String",
+    "value": "C:/Users/jmrse/AppData/LocalLow/VPULAB/SPIN"
+  }
+}
