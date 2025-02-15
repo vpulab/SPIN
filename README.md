@@ -15,3 +15,15 @@ https://assetstore.unity.com/packages/2d/textures-materials/metals/real-material
 
 ## Demo
 We have a functional pre-release demo here: [pre-release](https://github.com/vpulab/SPIN/releases/tag/pre-release)
+
+
+## Cite
+
+If you find this useful in your research, please consider citing:
+
+    @article{montalvo2024spin,
+        title={SPIN: Spacecraft Imagery for Navigation},
+        author={Montalvo, Javier and P{\'e}rez-Villar, Juan Ignacio Bravo and Garc{\'\i}a-Mart{\'\i}n, {\'A}lvaro and Carballeira, Pablo and Besc{\'o}s, Jes{\'u}s},
+        journal={arXiv preprint arXiv:2406.07500},
+        year={2024}
+    }
